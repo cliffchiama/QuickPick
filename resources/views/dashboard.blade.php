@@ -64,7 +64,7 @@
         <p><strong>Role:</strong> {{ auth()->user()->role }}</p>
         <p><strong>Student ID:</strong> {{ auth()->user()->student_id }}</p>
         
-        <!-- Profile Link Added -->
+
         <p>
             <a href="/profile" class="btn-profile">
                 Edit Profile

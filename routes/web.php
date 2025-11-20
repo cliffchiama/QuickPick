@@ -15,7 +15,7 @@ Route::get('/dashboard', function () {
     return view('dashboard');
 })->middleware('auth');
 
-// Test routes for role middleware
+
 Route::get('/admin/test', function () {
     return "Admin area - Middleware working!";
 })->middleware(['auth', 'role:admin']);
