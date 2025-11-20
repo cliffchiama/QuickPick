@@ -34,9 +34,21 @@
             cursor: pointer;
             text-decoration: none;
             display: inline-block;
+            margin-right: 10px;
         }
         .btn-logout:hover {
             background: #c82333;
+        }
+        .btn-profile {
+            background: #28a745;
+            color: white;
+            padding: 10px 20px;
+            text-decoration: none;
+            border-radius: 5px;
+            display: inline-block;
+        }
+        .btn-profile:hover {
+            background: #218838;
         }
     </style>
 </head>
@@ -52,6 +64,12 @@
         <p><strong>Role:</strong> {{ auth()->user()->role }}</p>
         <p><strong>Student ID:</strong> {{ auth()->user()->student_id }}</p>
         
+        <!-- Profile Link Added -->
+        <p>
+            <a href="/profile" class="btn-profile">
+                Edit Profile
+            </a>
+        </p>
 
         <form method="POST" action="{{ route('logout') }}" id="logout-form">
             @csrf
