@@ -10,67 +10,39 @@ use Illuminate\Support\Facades\Validator;
 
 class RegisterController extends Controller
 {
-    /*
-    |--------------------------------------------------------------------------
-    | Register Controller
-    |--------------------------------------------------------------------------
-    |
-    | This controller handles the registration of new users as well as their
-    | validation and creation. By default this controller uses a trait to
-    | provide this functionality without requiring any additional code.
-    |
-    */
-
     use RegistersUsers;
 
-    /**
-     * Where to redirect users after registration.
-     *
-     * @var string
-     */
     protected $redirectTo = '/home';
 
-    /**
-     * Create a new controller instance.
-     *
-     * @return void
-     */
     public function __construct()
     {
         $this->middleware('guest');
     }
 
     /**
-     * Get a validator for an incoming registration request.
-     *
-     * @param  array  $data
-     * @return \Illuminate\Contracts\Validation\Validator
+     * Validate registration input.
      */
     protected function validator(array $data)
     {
         return Validator::make($data, [
             'name'        => ['required', 'string', 'max:255'],
+            'student_id'  => ['required', 'string', 'max:255', 'unique:users,student_id'],
             'email'       => ['required', 'string', 'email', 'max:255', 'unique:users'],
             'password'    => ['required', 'string', 'min:8', 'confirmed'],
-            'student_id'  => ['required', 'string', 'max:255'],
-            'role'        => ['nullable', 'string'], // not required — defaults to "student"
         ]);
     }
 
     /**
-     * Create a new user instance after a valid registration.
-     *
-     * @param  array  $data
-     * @return \App\Models\User
+     * Create the new user.
      */
     protected function create(array $data)
     {
         return User::create([
-            'name'        => $data['name'],
-            'email'       => $data['email'],
-            'password'    => Hash::make($data['password']),
-            'student_id'  => $data['student_id'],
-            'role'        => $data['role'] ?? 'student', // default role
+            'name'       => $data['name'],
+            'student_id' => $data['student_id'],
+            'email'      => $data['email'],
+            'password'   => Hash::make($data['password']),
+            'role'       => 'student',  // default role ✅ Added
         ]);
     }
 }
