@@ -36,3 +36,6 @@ Route::prefix('cafeteria')->group(function () {
     // Place an order
     Route::post('/order', [CafeteriaController::class, 'order'])->name('cafeteria.order');
 });
+Route::get('/', function () {
+    return view('welcome');
+})->name('home');

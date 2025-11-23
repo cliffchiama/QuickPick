@@ -23,8 +23,17 @@
 }
 </style>
 
-<div class="hero">
-    <h1>Welcome to the Strathmore Food App!</h1>
-    <a href="{{ route('cafeteria.menu') }}" class="btn btn-primary">View Menu</a>
+@extends('layouts.app')
+
+@section('content')
+<div class="d-flex justify-content-center align-items-center vh-100 text-center" 
+     style="background-image: url('{{ asset('images/cafeteria.jpg') }}'); background-size: cover; background-position: center;">
+    <div class="text-white">
+        <h1 class="display-4 fw-bold">Welcome to the Strathmore Food App!</h1>
+        <p class="lead">Order your favorite meals quickly and easily.</p>
+        <a href="{{ route('cafeteria.menu') }}" class="btn btn-primary btn-lg mt-3">See Menu</a>
+    </div>
 </div>
+@endsection
+
 @endsection

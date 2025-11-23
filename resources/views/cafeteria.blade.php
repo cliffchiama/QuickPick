@@ -3,13 +3,13 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>School Cafeteria</title>
+  <title>Online Cafeteria</title>
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
   <!-- Header -->
   <header>
-    <h1>School Cafeteria</h1>
+    <h1>Online Cafeteria</h1>
     <nav>
       <a href="#">Home</a>
       <a href="#">Menu</a>
@@ -46,7 +46,7 @@
   </aside>
 
   <footer>
-    <p>School Cafeteria &copy; 2025</p>
+    <p>Online Cafeteria &copy; 2025</p>
   </footer>
 
   <script src="script.js"></script>
