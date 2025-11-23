@@ -1,11 +1,7 @@
 <?php
+use App\Http\Controllers\CafeteriaController;
 
-use Illuminate\Support\Facades\Route;
+Route::get('/cafeteria', [CafeteriaController::class, 'index'])->name('cafeteria.index');
+Route::get('/cafeteria/menu', [CafeteriaController::class, 'menu'])->name('cafeteria.menu');
+Route::post('/cafeteria/order', [CafeteriaController::class, 'order'])->name('cafeteria.order');
 
-Route::get('/', function () {
-    return view('welcome');
-});
-
-Auth::routes();
-
-Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
