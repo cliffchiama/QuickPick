@@ -24,7 +24,7 @@
 </style>
 
 <div class="hero">
-    <h1>Welcome to the School Cafeteria</h1>
+    <h1>Welcome to the Strathnore Food App!</h1>
     <a href="{{ route('cafeteria.menu') }}" class="btn btn-primary">View Menu</a>
 </div>
 @endsection
